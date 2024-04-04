@@ -1,0 +1,32 @@
+            <!-- Kategori Bölümü -->
+            <div class="row">
+                <div class="col mt-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kategori Bölümü</h5>
+                            <ul class="list-group list-group-flush">
+                                {% for category in Categories %}
+                                <a class="list-group-item" href="{% url 'category-detail' category.slug %}">{{ category.title }}</a>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Arama Yap Bölümü -->
+            <div class="row">
+                <!-- Arama Yap Kartı -->
+                <div class="col mt-3 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Haber Arama Bölümü</h5>
+                            <form method="get" action=" {% url 'news-search' %} ">
+                                <div class="mb-3">
+                                    <input type="text" name="q" class="form-control" placeholder="Arama Bölümü">
+                                </div>
+                                <button type="submit" class="w-100 btn btn-primary">Haber & İçerik Ara</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>

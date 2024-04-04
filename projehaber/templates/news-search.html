@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Servisler - Duyurular - PROJEHABER {% endblock title %}
+{% block page_description %} Ismek Kurs Projesi - PROJE HABER {% endblock page_description %}
+{% block page_keywords %} rifatrahvali, haber, projehaber, proje, ismek {% endblock page_keywords %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+
+<!-- Haberler -->
+<div class="row mt-4 mb-5">
+    <!-- Orta Kısım Bölümü -->
+    <div class="row mt-4 mb-5">
+        <!-- Orta Kısım Bölümü Sol-->
+        <div class="col-md-8">
+            <div class="row">
+                <!-- Haberler -->
+                <div class="row mt-4 mb-5">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Haberler Arşivi</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for newsone in News %}
+                        <!-- Haberler Kartı -->
+                        <div class="col mt-3 mb-3">
+                            <div class="card" style="width: 18rem;">
+
+                                <img src="{% get_media_prefix %}{{ newsone.image }}" class="card-img-top"
+                                    alt="Haber Gorsel">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ newsone.title }}</h5>
+                                    <p class="card-text">
+                                        {{newsone.context|safe|truncatechars:100}}
+                                    </p>
+                                    <a href="{% url 'news-detail' slug=newsone.slug %}" class="btn btn-primary">Detaylar</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Orta Kısım Bölümü Sağ-->
+        <div class="col-md-4">
+            <!-- include ile sağ tarafı buraya ekleyeceğiz. -->
+            {% include "includes/sidebar.html" %}
+        </div>
+    </div>
+    <!-- Pagination Bölümü -->
+    <div class="row mt-4 mb-5">
+        <div class="col-md-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Geri</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">İleri</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Hakkımızda - PROJEHABER {% endblock title %}
+{% block page_description %} Ismek Kurs Projesi - PROJE HABER {% endblock page_description %}
+{% block page_keywords %} rifatrahvali, haber, projehaber, proje, ismek {% endblock page_keywords %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+
+<div class="row mt-4 mb-4">
+    <div class="col-md-12">
+        <h2>
+            {{ Abouts.title }}
+        </h2>
+        <p>
+            {{Abouts.context|safe}}
+        </p>
+    </div>
+</div>
+
+{% endblock content %}
