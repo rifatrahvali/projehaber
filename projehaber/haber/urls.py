@@ -11,4 +11,5 @@ urlpatterns = [
     path('news/<slug:slug>/',NewsDetailView.as_view(),name='news-detail'),
     path('category/<slug:slug>/', CategoryDetailView.as_view(),name='category-detail'),
     path('search/',NewsSearchView.as_view(),name='news-search'),
+    path('auth/',AuthView.as_view(),name='auth'),
 ]

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} Servisler - Duyurular - PROJEHABER {% endblock title %}
+{% block title %} Haber Arşivi - PROJEHABER {% endblock title %}
 {% block page_description %} Ismek Kurs Projesi - PROJE HABER {% endblock page_description %}
 {% block page_keywords %} rifatrahvali, haber, projehaber, proje, ismek {% endblock page_keywords %}
 {% block extracss %}{% endblock extracss %}
@@ -34,7 +34,7 @@
                                     <p class="card-text">
                                         {{newsone.context|safe|truncatechars:100}}
                                     </p>
-                                    <a href="{% url 'news-detail' slug=newsone.slug %}" class="btn btn-primary">Detaylar</a>
+                                    <a href="{% url 'news-detail' slug=newsone.slug %}" class="btn btn-dark">Detaylar</a>
                                 </div>
                             </div>
                         </div>

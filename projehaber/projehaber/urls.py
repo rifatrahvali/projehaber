@@ -26,6 +26,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     #haberuygulamasının içindeki urls.py dosyası anlamına geliyor.
-    path('',include('haber.urls'))
+    path('',include('haber.urls')),
+    path('account/',include('kullanici.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
 + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

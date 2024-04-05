@@ -47,12 +47,21 @@
                     </li>
                 </ul>
                 <div class="d-flex">
-                    <form class="d-flex ms-3">
-                        <button class="btn btn-outline-light" type="submit">Giriş</button>
-                    </form>
-                    <form class="d-flex ms-3">
-                        <button class="btn btn-outline-light" type="submit">Kayıt</button>
-                    </form> 
+                    {% if user.is_authenticated %}
+                        <form class="d-flex ms-3">
+                            <a href="{% url 'logout' %}" class="btn btn-outline-light">Çıkış</a>
+                        </form> 
+                        <form class="d-flex ms-3">
+                            <a href="#" class="btn btn-outline-light">Hoşgeldin, {{user.get_full_name|title}}</a>
+                        </form> 
+                    {% else %}
+                        <form class="d-flex ms-3">
+                            <a href="{% url 'login' %}" class="btn btn-outline-light">Giriş</a>
+                        </form> 
+                        <form class="d-flex ms-3">
+                            <a href="{% url 'register' %}" class="btn btn-outline-light">Kayıt</a>
+                        </form> 
+                    {% endif %}
                 </div>
             </div>
         </div>

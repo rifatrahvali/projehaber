@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Kayıt - PROJEHABER {% endblock title %}
+{% block page_description %} Ismek Kurs Projesi - PROJE HABER {% endblock page_description %}
+{% block page_keywords %} rifatrahvali, haber, projehaber, proje, ismek {% endblock page_keywords %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+
+<!-- Kayıt -->
+<div class="row mt-4 mb-5">
+    <!-- Orta Kısım Bölümü -->
+    <div class="row mt-4 mb-5">
+        <!-- Orta Kısım Bölümü Sol-->
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Kayıt Bölümü</h2>
+                </div>
+            </div>
+            <div class="row">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+                    <div class="input-group input-group-lg mt-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Kullanıcı Adı *</span>
+                        <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Kullanıcı Adı">
+                    </div>
+                    <div class="input-group input-group-lg mt-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Email *</span>
+                        <input type="email" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="E-mail">
+                    </div>
+                    <div class="input-group input-group-lg mt-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">isim *</span>
+                        <input type="text" name="firstname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="isim">
+                    </div>
+                    <div class="input-group input-group-lg mt-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">soyisim *</span>
+                        <input type="text" name="lastname" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="soyisim">
+                    </div>
+                    <div class="input-group input-group-lg mt-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Parola *</span>
+                        <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Parola & Şifre">
+                    </div>
+                    <div class="input-group input-group-lg mt-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Parola Tekrar *</span>
+                        <input type="password" name="repassword" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Parola & Şifre Tekrar">
+                    </div>
+                    <input type="submit" class="btn btn-dark w-100 mt-3" value="Kayıt">
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}

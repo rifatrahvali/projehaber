@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'haber',
+    'kullanici',
     'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',

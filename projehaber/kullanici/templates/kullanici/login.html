@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Giriş - PROJEHABER {% endblock title %}
+{% block page_description %} Ismek Kurs Projesi - PROJE HABER {% endblock page_description %}
+{% block page_keywords %} rifatrahvali, haber, projehaber, proje, ismek {% endblock page_keywords %}
+{% block extracss %}{% endblock extracss %}
+{% block content %}
+
+
+<!-- Giriş -->
+<div class="row mt-4 mb-5">
+    <!-- Orta Kısım Bölümü -->
+    <div class="row mt-4 mb-5">
+        <!-- Orta Kısım Bölümü Sol-->
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Giriş Bölümü</h2>
+                </div>
+            </div>
+            <div class="row">
+
+                <form action="{% url "login" %}" method="POST">
+                    {% csrf_token %}
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error }}
+                        </div>
+                    {% endif %}
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">@</span>
+                        <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Kullanıcı Adı & E-mail">
+                    </div>
+                    <div class="input-group input-group-lg mt-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">**</span>
+                        <input type="password" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" placeholder="Parola & Şifre">
+                    </div>
+                    <input type="submit" class="btn btn-dark w-100 mt-3" value="Giriş">
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}

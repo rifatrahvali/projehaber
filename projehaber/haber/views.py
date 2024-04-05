@@ -98,9 +98,5 @@ class NewsSearchView(ListView):
         return News.objects.none()
     
 
-# - Haber
-# - Kategori
-# - hakkımızda
-# - iletişim
-# - Hizmetler
-# - Ayarlar
+class AuthView(TemplateView):
+    template_name = 'auth.html'
